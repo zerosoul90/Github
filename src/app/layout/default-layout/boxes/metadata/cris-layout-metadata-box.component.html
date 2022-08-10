@@ -1,0 +1,20 @@
+<ngb-accordion [activeIds]="activeIds"
+               [class.mr-2]="!box.clear && !nextBoxClear">
+  <ngb-panel id="{{box.shortname}}">
+    <ng-template ngbPanelTitle>
+      <span [innerHTML]="getBoxHeader()"></span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="{{box.style}}">
+        <!-- PRINT ROWS -->
+        <div ds-row
+          *ngFor="let row of metadatacomponents?.rows"
+          [row]="row"
+          [item]="item"
+          [box]="box"
+          class="row">
+        </div>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
